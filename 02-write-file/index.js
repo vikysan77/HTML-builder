@@ -1,5 +1,6 @@
 const fs = require ('fs')
 const readline = require('readline')
+const path = require('path')
 const process = require('process');
 const readLine = readline.createInterface({
     input: process.stdin,
@@ -7,8 +8,8 @@ const readLine = readline.createInterface({
     prompt: 'Enter text:\n'
   })
 
-
-const newText = fs.createWriteStream('text.txt');
+const filePath = path.join(__dirname, 'text.txt')
+const newText = fs.createWriteStream(filePath);
 readLine.prompt();
 
 readLine.on('line', (input) => {
