@@ -17,9 +17,9 @@ async function copyDir(){
         }
         files.forEach((item) => {
             let file = path.join(source, item);
-            let duu = path.join(destination, item);
+            let fileCopy = path.join(destination, item);
         
-            fs.copyFile(file, duu, (err) => {
+            fs.copyFile(file, fileCopy, (err) => {
                 if (err) {
                     throw err;
                 }
