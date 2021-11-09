@@ -4,7 +4,7 @@ const fs = require('fs')
 
 const source = path.resolve( __dirname, 'files')
 const destination = path.join( __dirname, 'files-copy')
-fs.promises.rm(destination, {recursive:true}, (err)=>{
+fs.promises.rm(destination, {recursive:true, force:true}, (err)=>{
         if (err){
             throw err
         }
