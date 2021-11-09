@@ -34,6 +34,7 @@ async function copyDir(){
                 }
             });     
         });
+        console.log('Copy completed!')
     });    
 }
-copyDir()
+
