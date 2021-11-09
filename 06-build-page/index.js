@@ -92,7 +92,7 @@ async function copyDirAssets(){
         };
     } copyDirPath(source, path.resolve(distFolder, 'assets'));
 }
-copyDirAssets();
+
 
 
 //Замена тегов
