@@ -54,8 +54,15 @@ fs.readdir(stylesFolder, (err, files) => {
 copyFileCss()
 
 //Копирование папки assets
-
+fs.promises.rm(path.join(distFolder, 'assets'), {recursive:true, force:true}, (err)=>{
+    if (err){
+        throw err
+    }
+}).then(()=>{
+    copyDirAssets()
+})
 async function copyDirAssets(){
+    
     fs.mkdir(path.join(distFolder, 'assets'), {recursive: true}, (err)=>{
         if (err){
             throw err;
