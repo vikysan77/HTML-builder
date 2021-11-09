@@ -6,6 +6,8 @@ const distFolder = path.join(__dirname, 'project-dist')
 const fileCss = path.join(distFolder, 'bundle.css')
 
 
+
+
 async function mergeStyles(){
     
     fs.writeFile(fileCss,'', (err) => {

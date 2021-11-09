@@ -4,13 +4,22 @@ const fs = require('fs')
 
 const source = path.resolve( __dirname, 'files')
 const destination = path.join( __dirname, 'files-copy')
-
+fs.promises.rm(destination, {recursive:true}, (err)=>{
+        if (err){
+            throw err
+        }
+    }).then(()=>{
+        copyDir()
+    })
 async function copyDir(){
+    
     fs.mkdir(destination, {recursive: true}, (err)=>{
         if (err){
             throw err;
         }
     });
+
+    
     fs.readdir(source, (err, files) => {
         if (err) {
             throw err;
@@ -25,7 +34,6 @@ async function copyDir(){
                 }
             });     
         });
-    console.log('Copy completed!')
     });    
 }
 copyDir()
